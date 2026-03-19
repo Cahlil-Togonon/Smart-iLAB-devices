@@ -448,7 +448,11 @@ script:
           id(mqtt_sensor).publish_json("apollo_air_1_${device_id}/data", [=](JsonObject root){
 
           // date and time
-          root["timestamp"] = id(sntp_time).now().strftime("%Y-%m-%d %X%z");
+          if (id(sntp_time).available()) {
+            root["timestamp"] = id(sntp_time).now().strftime("%Y-%m-%d %X%z");
+          } else {
+            root["timestamp"] = "not synced yet";
+          }
 
           // sensor data
           root["co2"]         = id(co2).state;
