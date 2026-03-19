@@ -505,15 +505,16 @@ script:
 
 
 time:
-  # every 10 seconds, publish sensor and actuator data
   - platform: sntp
-    on_time: 
-      seconds: /10
-      then: 
-        - script.execute: mqtt_publish_data
-  # every second, check if an actuator's state changed
-  - platform: sntp
-    on_time: 
-      seconds: /1,/2,/3,/4,/5,/6,/7,/8,/9,/10
-      then: 
-        - script.execute: mqtt_publish_data_on_actuator_state_change
+    id: sntp_time
+
+    # publish data every 10 seconds
+    on_time:
+      - seconds: /10
+        then:
+          - script.execute: mqtt_publish_data
+
+      # check actuator changes every second
+      - seconds: "*"
+        then:
+          - script.execute: mqtt_publish_data_on_actuator_state_change
