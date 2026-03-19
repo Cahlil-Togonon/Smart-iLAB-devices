@@ -9,7 +9,7 @@ packages:
     url: https://github.com/Cahlil-Togonon/Smart-iLAB
     ref: main
     file: packages/device_base.yaml
-    refresh: 5s
+    refresh: 5min
 
 
 globals:
