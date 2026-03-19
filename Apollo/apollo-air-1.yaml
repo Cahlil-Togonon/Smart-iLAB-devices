@@ -506,6 +506,7 @@ script:
 
 time:
   - platform: sntp
+    id: sntp_time
 
     # publish data every 10 seconds
     on_time:
