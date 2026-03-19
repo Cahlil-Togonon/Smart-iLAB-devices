@@ -4,12 +4,6 @@ substitutions:
   version: "24.3.21.1"
   device_description: ${name} made by Apollo Automation - version ${version}.
 
-globals:
-  - id: current_timestamp
-    type: std::string
-    restore_value: false
-    initial_value: ""
-
 packages:
   device_base:
     url: https://github.com/Cahlil-Togonon/Smart-iLAB
@@ -19,6 +13,11 @@ packages:
 
 
 globals:
+  - id: current_timestamp
+    type: std::string
+    restore_value: false
+    initial_value: ""
+
   - id: cycleCounter
     type: int
     restore_value: no
