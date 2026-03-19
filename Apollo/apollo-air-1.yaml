@@ -446,7 +446,7 @@ script:
       - lambda: !lambda |-
           id(mqtt_sensor).publish_json("apollo_air_1_${device_id}/data", [=](JsonObject root){
 
-          root["timestamp"] = id(current_timestamp).now().strftime("%Y-%m-%d %X%z");
+          root["timestamp"] = id(sntp_time).now().strftime("%Y-%m-%d %X%z");
 
           // sensor data
           root["co2"]         = id(co2).state;
