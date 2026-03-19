@@ -453,7 +453,7 @@ script:
           // sensor data
           root["co2"]         = id(co2).state;
           root["pressure"]    = id(dps310pressure).state;
-          root["temperature"] = id(dps310temperature).state;
+          root["temperature"] = id(sen55_temperature).state;
           root["humidity"]    = id(sen55_humidity).state;
           root["nox"]         = id(sen55_nox).state;
           root["voc"]         = id(sen55_voc).state;
