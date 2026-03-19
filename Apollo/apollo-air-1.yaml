@@ -13,11 +13,6 @@ packages:
 
 
 globals:
-  - id: current_timestamp
-    type: std::string
-    restore_value: false
-    initial_value: ""
-
   - id: cycleCounter
     type: int
     restore_value: no
